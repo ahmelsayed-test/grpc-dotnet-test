@@ -19,7 +19,7 @@ public class GreeterService : Greeter.GreeterBase
             for (int i = 0; i < 100; i++)
             {
                 await Task.Delay(1000);
-                await responseStream.WriteAsync(new HelloReply { Message = "Hello " + request.Name });
+                await responseStream.WriteAsync(new HelloReply { Message = $"Hello {request.Name} - {i}" });
             }
         }
     }
